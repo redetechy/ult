@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html manifest="cache.appcache" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>GoTracky</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+			margin: 0;
+            background-color: #FFFFFF;
+        }
+        #appLoadingIndicator {
+            position: absolute;
+			font-size: 20px;
+            top: 40%;
+            margin-top: -15px;
+            text-align: center;
+            width: 100%;
+            height: 30px;
+			z-index: 0;
+        }
+        #appLoadingInd1 {
+            background-color: #1985D0;
+            display: inline-block;
+            height: 30px;
+            -webkit-border-radius: 15px;
+            margin: 0 5px;
+            width: 30px;
+            opacity: 0.8;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-animation-duration: 0.55s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+
+		}
+        #appLoadingInd2 {
+            background-color: #1985D0;
+            display: inline-block;
+            height: 30px;
+            -webkit-border-radius: 15px;
+            margin: 0 5px;
+            width: 30px;
+            opacity: 0.8;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-animation-duration: 0.65s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+		}
+        #appLoadingInd3 {
+            background-color: #1985D0;
+            display: inline-block;
+            height: 30px;
+            -webkit-border-radius: 15px;
+            margin: 0 5px;
+            width: 30px;
+            opacity: 0.8;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-animation-duration: 0.75s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+		}
+		#reLoadAppBtn {
+			font-size: 20px;
+		}
+        @-webkit-keyframes appLoadingIndicator{
+            0% {
+                opacity: 0.8
+            }
+            50% {
+                opacity: 0
+            }
+            100% {
+                opacity: 0.8
+            }
+        }
+    </style>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+			integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+			crossorigin=""/>
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+		integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+		crossorigin=""></script>
+	<script type="text/javascript"  src="phonegap.js"></script>
+	<script type="text/javascript" src="tracky.js"></script>
+	<script type="text/javascript" charset="utf-8"> 
+		// Wait for device API libraries to load
+		function onLoad() {
+			try {
+				document.addEventListener("deviceready", function() {
+					// Register the event listener
+					document.addEventListener("backbutton", function() {
+						Ext.Msg.confirm(
+							"Quit",
+							"Do you want to quit?",
+							function(buttonId) {
+								if (buttonId === 'yes') {
+									navigator.app.exitApp();
+								}
+							}
+						);
+					}, true);
+				}, true);
+			} catch(err) {
+				//error handling
+			}
+			loadJSFiles();
+		};
+	</script>
+</head>
+<body onload="onLoad()">
+    <div id="appLoadingIndicator">
+		<div id="appLoadingInd" style="padding:20px;">
+			<div id="loadingMsg">Loading</div> <br/>
+			<div id="appLoadingInd1"></div>
+			<div id="appLoadingInd2"></div>
+			<div id="appLoadingInd3"></div>
+		</div>
+		<div id="appLoadError" style="display:none">
+			<span id="appLoadingErrorMsg">Problem...</span> Please reload the app after sometime.<br/><br/>
+			<input id="reLoadAppBtn" type="submit" onclick="window.location.reload();" value="Reload App">
+		</div>		
+    </div>
+</body>
+</html>

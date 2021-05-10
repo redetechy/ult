@@ -1,0 +1,20 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "D:/Android/gotrack.keystore",
+            "storePassword": "pass@w0rd1",
+            "alias": "gotrack",
+            "password" : "pass@w0rd1",
+            "keystoreType": "",
+            "packageType": "apk"
+        },
+        "release": {
+            "keystore": "D:/Android/gotrack.keystore",
+            "storePassword": "pass@w0rd1",
+            "alias": "gotrack",
+            "password" : "pass@w0rd1",
+            "keystoreType": "",
+            "packageType": "apk"
+        }
+    }
+}

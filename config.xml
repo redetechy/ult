@@ -7,7 +7,8 @@
     <author email="support@gotracky.com" href="http://www.gotracky.com">
         Ultracker
     </author>
-    <content src="http://localhost:49000" />
+    <!--<content src="http://localhost:49000" />-->
+	<content src="index.html" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
@@ -42,7 +43,7 @@
 	<plugin name="cordova-plugin-network-information" source="npm" spec="~ 1.2.0" />
 	<plugin name="cordova-plugin-statusbar" source="npm" spec="2.4.3"/> 
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="1.3.4"/>
-	<plugin name="cordova-plugin-local-webserver" source="npm" />
+	<!--<plugin name="cordova-plugin-local-webserver" source="npm" />-->
 	
 	<icon src="icon.png"/>
 	<icon src="resources/android/icon/drawable-ldpi-icon.png" gap:platform="android" gap:qulifier="ldpi"/>

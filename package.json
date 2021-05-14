@@ -27,7 +27,8 @@
       "cordova-plugin-device": {},
       "cordova-plugin-geolocation": {},
       "cordova-plugin-network-information": {},
-      "cordova-plugin-wkwebview-engine": {}
+      "cordova-plugin-wkwebview-engine": {},
+      "cordova-plugin-local-webserver": {}
     },
     "platforms": [
       "ios"
